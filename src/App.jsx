@@ -1,15 +1,29 @@
-import "./App.css";
+import { useState } from "react";
 import Landing from "./components/Landing";
-// import Login from "./components/Login";
+import Game from "./components/Game";
+
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
-  return (
-    <div className="App">
-      <Landing />
-      {/* <h1> Sudoko</h1>
-      <Login /> */}
-    </div>
-  );
+	const [options, setOptions] = useState({
+		level: "",
+		size: "",
+	});
+	return (
+		<div className="App">
+			<Router>
+				<Switch>
+					<Route exact path="/">
+						<Landing options={options} setOptions={setOptions} />
+					</Route>
+					<Route exact path="/game">
+						<Game options={options} />
+					</Route>
+				</Switch>
+			</Router>
+		</div>
+	);
 }
 
 export default App;
