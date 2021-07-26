@@ -3,7 +3,7 @@ import Landing from "./components/Landing";
 import Game from "./components/Game";
 
 import "./App.css";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
 	const [options, setOptions] = useState({

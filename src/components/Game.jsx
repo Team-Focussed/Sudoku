@@ -13,23 +13,20 @@ const Game = ({ options }) => {
 		if (options.size === "") {
 			history.push("/");
 		}
-		document.getElementById("sudoku").innerHTML = "";
+		// document.getElementById("sudoku").innerHTML = "";
 		const sudokuBoard = $("#sudoku").sudokuJS({
 			difficulty: options.level,
 			boardSize: parseInt(options.size),
 		});
-		const play = () => {
-			setPause(false);
-		};
 
-		document.getElementById("sudoku").innerHTML += `
-		<div className="play">
-			<i className="fas fa-play-circle" id="fa-play-circle"></i>
-		</div>
-		`;
-		document.getElementById("fa-play-circle").addEventListener("click", () => {
-			setPause(!pause);
-		});
+		// document.getElementById("sudoku").innerHTML += `
+		// <div className="play">
+		// 	<i className="fas fa-play-circle" id="fa-play-circle"></i>
+		// </div>
+		// `;
+		// document.getElementById("fa-play-circle").addEventListener("click", () => {
+		// 	setPause(!pause);
+		// });
 		// const sudokuBoardCells = document.querySelectorAll(".sudoku-board-cell");
 
 		if (options.level === "easy") {
@@ -55,7 +52,7 @@ const Game = ({ options }) => {
 						setPause(!pause);
 					}}
 				>
-					{pause ? <i class="fas fa-pause-circle"></i> : <i class="fas fa-play-circle"></i>}
+					{pause ? <i className="fas fa-pause-circle"></i> : <i className="fas fa-play-circle"></i>}
 				</div>
 			</div>
 			<div className="su">
@@ -78,18 +75,18 @@ const Game = ({ options }) => {
 			</div>
 			<div className="buttons">
 				<button
-					class="nes-btn"
+					className="nes-btn"
 					onClick={() => {
-						mySudokuJS.clearBoard();
+						mySudokuJS.solveAll();
 					}}
 				>
 					Solve
 				</button>
 
 				<button
-					class="nes-btn"
+					className="nes-btn"
 					onClick={() => {
-						mySudokuJS.clearBoard();
+						mySudokuJS.solveStep();
 					}}
 				>
 					Hint

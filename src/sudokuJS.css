@@ -1,5 +1,4 @@
 .sudoku-board {
-	min-height: 22.75rem;
 	margin-bottom: 1em;
 }
 /*cell (wrapper) contains both cell input and candidates div*/
@@ -8,7 +7,6 @@
 	position: relative;
 	border: 1px solid #ddd;
 	background: white;
-	max-width: 11.11111%;
 }
 /*rules for drawing the black lines dividing houses
 			-- specific for board size 9! need diff rules for diff board sizes
